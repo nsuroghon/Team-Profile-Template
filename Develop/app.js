@@ -43,16 +43,57 @@ function managerQ() {
                 name: 'officeManager',
                 message: "enter manager's office number"
             },
+            // add team member?
             {
-                type: 'list',
+                type: 'confirm',
                 name: 'addMember',
                 message: "would you like to add a team member?",
-                choices: ["yes", "no"]
             },
-            
+            // Add member : engineer or intern
+            {
+                when: (Response) => Response.addMember === true,
+                type: 'checkbox',
+                name: 'chooseRole',
+                message: 'select role of team member you want to add',
+                Choices: ["Engineer", "Intern"]
+            },
+            //engineer
+            {
+                when: (Response) => Response.chooseRole === "Engineer",
+                type: 'number',
+                name: 'idEngineer',
+                message: 'input Engineer id number',
+            },
+            {
+                type: 'input',
+                name: 'emailEngineer',
+                message: 'input engineer email address'
+            },
+            {
+                type: 'input',
+                name: 'githubEngineer',
+                message: 'input Engineer github username'
+            },
+            // Intern
+                {
+                    when: (Response) => Response.chooseRole === "Intern",
+                    type: 'number',
+                    name: 'idIntern',
+                    message: 'input Intern id number',
+                },
+                {
+                    type: 'input',
+                    name: 'emailIntern',
+                    message: 'input Intern email address'
+                },
+                {
+                    type: 'input',
+                    name: 'schoolIntern',
+                    message: 'input school Intern attends'
+                },
         ])
 }
-
+// part 2: create objects for each team member, using correct classes as blueprint
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
