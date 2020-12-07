@@ -51,50 +51,73 @@ const Choices = require("inquirer/lib/objects/choices");
             },
             // Add member : engineer or intern
             {
-                when: (Response) => Response.addMember === true,
+                when: function(answers) {
+                   return answers.addMember === true;
+                },
                 type: 'checkbox',
                 name: 'chooseRole',
                 message: 'select role of team member you want to add',
-                Choices: ["Engineer", "Intern"]
+                choices: ["Engineer", "Intern"]
             },
             //engineer
             {
-                when: (Response) => Response.chooseRole === "Engineer",
+                when: function (answers) {
+                    return answers.chooseRole === "Engineer";
+                },
                 type: 'number',
                 name: 'idEngineer',
                 message: 'input Engineer id number',
             },
             {
+                when: function (answers) {
+                  return  answers.idEngineer;
+                },
                 type: 'input',
                 name: 'emailEngineer',
                 message: 'input engineer email address'
             },
             {
+                when: function (answers){
+                    return answers.emailEngineer;
+                },
                 type: 'input',
                 name: 'githubEngineer',
                 message: 'input Engineer github username'
             },
+
             // Intern
                 {
-                    when: (Response) => Response.chooseRole === "Intern",
+                    when: function (answers) {
+                        return answers.chooseRole === "Intern";
+                    },
                     type: 'number',
                     name: 'idIntern',
                     message: 'input Intern id number',
                 },
                 {
+                    when: function (answers) {
+                        return answers.idIntern;
+                    },
                     type: 'input',
                     name: 'emailIntern',
                     message: 'input Intern email address'
                 },
-                {
-                    type: 'input',
-                    name: 'schoolIntern',
-                    message: 'input school Intern attends'
-                },
+                // {
+                //     when: (response) => response.emailIntern,
+                //     type: 'input',
+                //     name: 'schoolIntern',
+                //     message: 'input school Intern attends'
+                // },
         ])
 // }
 
-// managerQ;
+// managerQ(){
+//     // Engineer function
+//     // Intern function
+// };
+
+// need to call the functions in the .then()
+// has to be done after the answers collected
 
 
 // part 2: create objects for each team member, using correct classes as blueprint
