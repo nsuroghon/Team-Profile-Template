@@ -3,32 +3,22 @@
 // NEED 4 THINGS FROM INQUIRER
 
 class Manager extends Employee {
-    constructor (name, id, email, office) {
-        // this.name = "";
-        // this.id = 0;
-        // this.email = "";
-        // this.office = 0;
+    constructor(name, id, email, officeNumber, ) {
+        super(name, id, email)
+        this.officeNumber = officeNumber;
+    }
+    
+    getRole() {
+        return "Manager";
     }
 }
-//NAME
-
-//ID NUM
-
-//EMAIL
-
-//OFFICE NUM
-
 
 // class Rabbit extends Animal {
 
 //     constructor(name, earLength) {
-//       this.speed = 0;
-//       this.name = name;
+//       super(name);
 //       this.earLength = earLength;
 //     }
   
-    // SUPER??????
-
-// constructor(name, earLength) {
-//     super(name);
-//     this.earLength = earLength;
+//     // ...
+//   }
