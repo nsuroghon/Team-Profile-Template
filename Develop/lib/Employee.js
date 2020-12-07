@@ -1,1 +1,24 @@
 // TODO: Write code to define and export the Employee class
+class Employee {
+    constructor(name, id, email) {
+      this.id = 0;
+      this.name = name;
+      this.email = email;
+    }
+
+    getId() {
+      return this.id;
+    }
+
+    getName() {
+        return this.name;
+      }
+
+    getEmail() {
+        return this.email;
+    }
+
+    getRole() {
+        return "Employee";
+    }
+}

@@ -16,7 +16,7 @@ const Choices = require("inquirer/lib/objects/choices");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-function managerQ() {
+// function managerQ() {
     inquirer
         .prompt([
             //name
@@ -92,7 +92,11 @@ function managerQ() {
                     message: 'input school Intern attends'
                 },
         ])
-}
+// }
+
+// managerQ;
+
+
 // part 2: create objects for each team member, using correct classes as blueprint
 
 // After the user has input all employees desired, call the `render` function (required
