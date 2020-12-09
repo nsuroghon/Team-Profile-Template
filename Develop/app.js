@@ -54,7 +54,7 @@ const Choices = require("inquirer/lib/objects/choices");
                 when: function(answers) {
                    return answers.addMember === true;
                 },
-                type: 'checkbox',
+                type: 'list',
                 name: 'chooseRole',
                 message: 'select role of team member you want to add',
                 choices: ["Engineer", "Intern"]
@@ -102,12 +102,12 @@ const Choices = require("inquirer/lib/objects/choices");
                     name: 'emailIntern',
                     message: 'input Intern email address'
                 },
-                // {
-                //     when: (response) => response.emailIntern,
-                //     type: 'input',
-                //     name: 'schoolIntern',
-                //     message: 'input school Intern attends'
-                // },
+                {
+                    when: (response) => response.emailIntern,
+                    type: 'input',
+                    name: 'schoolIntern',
+                    message: 'input school Intern attends'
+                },
         ])
 // }
 
